@@ -33,7 +33,7 @@ public class UserController {
 
     // 이메일로 유저 조회
     @GetMapping("/{email}")
-    public ResponseEntity<UserDTO> getUserByEmail(@PathVariable String email) {
+    public ResponseEntity<UserDTO> getUserByEmail(@PathVariable("email") String email) {
         Optional<UserDTO> userDTO = userService.findUserByEmail(email); // Optional<UserDTO> 반환
         return userDTO.map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
