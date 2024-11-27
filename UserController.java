@@ -40,7 +40,7 @@ public class UserController {
     }
 
     // 모든 유저 조회
-    @GetMapping("/user/all")
+    @GetMapping("/all")
     public ResponseEntity<List<UserDTO>> getAllUsers() {
         List<UserDTO> userDTOs = userService.findAllUsers(); // List<UserDTO> 반환
         return ResponseEntity.ok(userDTOs);
